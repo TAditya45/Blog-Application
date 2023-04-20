@@ -54,6 +54,7 @@ The `.yaml` files in the root directory are to specify the kubernetes manifests 
  
 
  5. Commands to create kubernet cluster  (all the below files are present in above repository)
+ 
          " kubectl apply -f secret.yaml "
          " kubectl apply -f configmap.yaml "
          " kubectl apply -f services.yaml "
