@@ -1,6 +1,6 @@
 
 # `Deployment` for the mongodb server
-#Container Port Chaged to 27017 from Null (mongodb-deployment)       [24/03/22]
+
 
 apiVersion: apps/v1
 kind: Deployment
@@ -37,7 +37,7 @@ spec:
 
 ---
 # `Deployment` for mongo-express
-# Container Port Chaged to  8081 from Null (flask-app-deployment)   [24/03/22]
+
 
 apiVersion: apps/v1
 kind: Deployment
@@ -78,7 +78,7 @@ spec:
                 key: database_url
 ---
 #`Deployment` for flask-app
-# Container Port Chaged to 5001 from Null (flask-app-deployment)   [24/03/22]
+
 
 
 apiVersion: apps/v1
@@ -120,4 +120,3 @@ spec:
               name: configmap
               key: database_url
 
-# All cahnges are commented above update services.yaml and comment out the changes 
