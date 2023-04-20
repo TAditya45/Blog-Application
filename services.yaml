@@ -1,0 +1,54 @@
+# Changes are updated using deployments.yaml  [27/03/22]
+#  mongodb server Services 
+# mongodb-service targetport aka Container port in deplyoments.yaml file 
+# only 1 API version available for mongodb
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017 
+
+--- 
+# mongo-express services
+# target port number has been changed as mentioned in deployments.yaml [27/03/22]
+# mongo-express-service targetport AKA Container port in deplyoments.yaml file
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-express-service
+spec:
+  selector:
+    app: mongo-express
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081 
+      nodePort: 30200
+
+---
+# flask-app services
+# target port number has been changed as mentioned in deployments.yaml [27/03/22]
+# flask-app targetport Aka Container port in deplyoments.yaml file 
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: webapp
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001
+      nodePort: 30100
